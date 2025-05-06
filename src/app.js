@@ -15,7 +15,13 @@ const app = express();
 
 // Middleware
 app.use(express.json()); // Parse JSON request bodies
-app.use(cors()); // Enable CORS
+const cors = require("cors");
+
+// Allow only your Vercel frontend
+app.use(cors({
+  origin: "https://shenshine.vercel.app"
+}));
+
 app.use(morgan("dev")); // Logger
 
 // Routes
