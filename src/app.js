@@ -15,7 +15,6 @@ const app = express();
 
 // Middleware
 app.use(express.json()); // Parse JSON request bodies
-const cors = require("cors");
 
 // Allow only your Vercel frontend
 app.use(cors({
